@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Match Loanbook with Asset Level Data • r2dii.match</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Match Loanbook with Asset Level Data">
 <meta property="og:description" content="Match loanbook with asset level data. For more
@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">r2dii.match</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9005</span>
       </span>
     </div>
 
@@ -76,167 +76,100 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="match-loanbook-with-asset-level-data" class="section level1">
+<div id="-match-loanbook-with-asset-level-data" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#match-loanbook-with-asset-level-data" class="anchor"></a><img src="https://i.imgur.com/3jITMq8.png" align="right" height="40"> Match loanbook with asset level data</h1></div>
+<a href="#-match-loanbook-with-asset-level-data" class="anchor"></a><img src="https://i.imgur.com/3jITMq8.png" align="right" height="40"> Match loanbook with asset level data</h1></div>
 <!-- badges: start -->
 
-<p>The goal of r2dii.match is to match generic loanbook data with physical asset level data (ald).</p>
+<p>The goal of r2dii.match is to match counterparties from a generic loanbook data with physical asset level data (ald).</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>Install the development version of r2dii.match with something like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co"># To install from a private repo, see ?usethis::browse_github_token()</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"2DegreesInvesting/r2dii.match"</span>, <span class="dt">auth_token =</span> <span class="st">"abc"</span>)</a></code></pre></div>
+<p>Before you install r2dii.match you may want to:</p>
+<ul>
+<li>
+<a href="https://rstudio.cloud/project/954051">Try an rstudio.cloud project that has r2dii.match already installed</a>.</li>
+<li>
+<a href="https://gist.github.com/maurolepore/a0187be9d40aee95a43f20a85f4caed6#installation">Learn how to minimize installation errors</a>.</li>
+</ul>
+<p>When you are ready, install the development version of r2dii.match from GitHub with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"2DegreesInvesting/r2dii.match"</span>)</span></code></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>As usual, we start by using required packages. For general purpose functions we’ll also use dplyr.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(r2dii.match)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(r2dii.dataraw)</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; Loading required package: r2dii.utils</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(dplyr)</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; Attaching package: 'dplyr'</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; The following objects are masked from 'package:stats':</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;     filter, lag</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt; The following objects are masked from 'package:base':</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;     intersect, setdiff, setequal, union</span></a></code></pre></div>
-<p>We’ll use some fake datasets from the r2dii.dataraw package, which name ends with <code>_demo</code>, for example:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">loanbook_demo</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; # A tibble: 320 x 19</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt;    id_loan id_direct_loant~ name_direct_loa~ id_intermediate~ name_intermedia~</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;           </span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;  1 L1      C294             Yuamen Xinneng ~ &lt;NA&gt;             &lt;NA&gt;            </span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;  2 L2      C293             Yuamen Changyua~ &lt;NA&gt;             &lt;NA&gt;            </span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;  3 L3      C292             Yuama Ethanol L~ IP5              Yuama Inc.      </span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;  4 L4      C299             Yudaksel Holdin~ &lt;NA&gt;             &lt;NA&gt;            </span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;  5 L5      C305             Yukon Energy Co~ &lt;NA&gt;             &lt;NA&gt;            </span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt;  6 L6      C304             Yukon Developme~ &lt;NA&gt;             &lt;NA&gt;            </span></a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  7 L7      C227             Yaugoa-Zapadnay~ &lt;NA&gt;             &lt;NA&gt;            </span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  8 L8      C303             Yueyang City Co~ &lt;NA&gt;             &lt;NA&gt;            </span></a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  9 L9      C301             Yuedxiu Corp One IP10             Yuedxiu Group   </span></a>
-<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt; 10 L10     C302             Yuexi County AA~ &lt;NA&gt;             &lt;NA&gt;            </span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; # ... with 310 more rows, and 14 more variables: id_ultimate_parent &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; #   name_ultimate_parent &lt;chr&gt;, loan_size_outstanding &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; #   loan_size_outstanding_currency &lt;chr&gt;, loan_size_credit_limit &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt; #   loan_size_credit_limit_currency &lt;chr&gt;, sector_classification_system &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; #   sector_classification_input_type &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt; #   sector_classification_direct_loantaker &lt;dbl&gt;, fi_type &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt; #   flag_project_finance_loan &lt;chr&gt;, name_project &lt;lgl&gt;,</span></a>
-<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt; #   lei_direct_loantaker &lt;lgl&gt;, isin_direct_loantaker &lt;lgl&gt;</span></a></code></pre></div>
-<p>Before matching, both the loanbook and asset level data must be prepared.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">loanbook &lt;-<span class="st"> </span><span class="kw"><a href="reference/prepare_ald_for_matching.html">prepare_loanbook_for_matching</a></span>(loanbook_demo)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">asset_level_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/prepare_ald_for_matching.html">prepare_ald_for_matching</a></span>(ald_demo)</a></code></pre></div>
-<p><code><a href="reference/match_all_against_all.html">match_all_against_all()</a></code> scores the similarity between <code>simpler_name</code> values in the prepared loanbook and ald datasets.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">matched_by_sector &lt;-<span class="st"> </span><span class="kw"><a href="reference/match_all_against_all.html">match_all_against_all</a></span>(loanbook, asset_level_data)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">matched_by_sector</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; # A tibble: 64,457 x 3</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt;    simpler_name_x simpler_name_y            score</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;                     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt;  1 astonmartin    astonmartin               1    </span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;  2 astonmartin    avtozaz                   0.681</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;  3 astonmartin    bogdan                    0.480</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;  4 astonmartin    chauto                    0.591</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;  5 astonmartin    chehejia                  0.311</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;  6 astonmartin    chtcauto                  0.455</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;  7 astonmartin    dongfenghonda             0.501</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt;  8 astonmartin    dongfengluxgen            0.496</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt;  9 astonmartin    electricmobilitysolutions 0.456</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; 10 astonmartin    faradayfuture             0.474</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; # ... with 64,447 more rows</span></a></code></pre></div>
-<p>By default, names are compared against ald names in the same sector. <code>by_sector = FALSE</code> increases the matching runtime on large datasets, and the amount of nonsensical matches.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/match_all_against_all.html">match_all_against_all</a></span>(</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">  loanbook, asset_level_data, </a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="dt">by_sector =</span> <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">)</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt; # A tibble: 308,228 x 3</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt;    simpler_name_x         simpler_name_y                score</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt;    &lt;chr&gt;                  &lt;chr&gt;                         &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt;  1 abahydropowergenco ltd abahydropowergenco ltd        1    </span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt;  2 abahydropowergenco ltd achinskyglinoziemskijkombinat 0.535</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt;  3 abahydropowergenco ltd affinityrenewables inc        0.598</span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt;  4 abahydropowergenco ltd africaoil corp                0.599</span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt;  5 abahydropowergenco ltd africonshp sa                 0.581</span></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co">#&gt;  6 abahydropowergenco ltd agnisteelsprivate ltd         0.535</span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="co">#&gt;  7 abahydropowergenco ltd agrenewables                  0.615</span></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt;  8 abahydropowergenco ltd airasiaxbhd                   0.545</span></a>
-<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co">#&gt;  9 abahydropowergenco ltd airbaltic                     0.545</span></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt; 10 abahydropowergenco ltd airblue                       0.551</span></a>
-<a class="sourceLine" id="cb6-18" data-line-number="18"><span class="co">#&gt; # ... with 308,218 more rows</span></a></code></pre></div>
-<p>You can recover the <code>sector</code> column from the <code>loanbook</code> and <code>ald</code> dataset with <code><a href="https://dplyr.tidyverse.org/reference/join.html">dplyr::left_join()</a></code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">matched_by_sector <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(loanbook, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"simpler_name_x"</span> =<span class="st"> "simpler_name"</span>))</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; # A tibble: 66,156 x 8</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt;    simpler_name_x simpler_name_y     score level    id    name    sector  source</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; </span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co">#&gt;  1 astonmartin    astonmartin        1     ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#&gt;  2 astonmartin    avtozaz            0.681 ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co">#&gt;  3 astonmartin    bogdan             0.480 ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co">#&gt;  4 astonmartin    chauto             0.591 ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="co">#&gt;  5 astonmartin    chehejia           0.311 ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="co">#&gt;  6 astonmartin    chtcauto           0.455 ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co">#&gt;  7 astonmartin    dongfenghonda      0.501 ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="co">#&gt;  8 astonmartin    dongfengluxgen     0.496 ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co">#&gt;  9 astonmartin    electricmobilitys~ 0.456 ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="co">#&gt; 10 astonmartin    faradayfuture      0.474 ultimat~ UP23  Aston ~ automo~ loanb~</span></a>
-<a class="sourceLine" id="cb7-16" data-line-number="16"><span class="co">#&gt; # ... with 66,146 more rows</span></a></code></pre></div>
-<p>You can also recover the <code>sector</code> column from the <code>ald</code> dataset with a similar strategy:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">matched_by_sector <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(loanbook, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"simpler_name_x"</span> =<span class="st"> "simpler_name"</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">rename</a></span>(<span class="dt">sector_x =</span> sector) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(asset_level_data, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"simpler_name_y"</span> =<span class="st"> "simpler_name"</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">rename</a></span>(<span class="dt">sector_y =</span> sector)</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt; # A tibble: 89,093 x 10</span></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt;    simpler_name_x simpler_name_y score level id    name.x sector_x source name.y</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt; </span></a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt;  1 astonmartin    astonmartin    1     ulti~ UP23  Aston~ automot~ loanb~ aston~</span></a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt;  2 astonmartin    avtozaz        0.681 ulti~ UP23  Aston~ automot~ loanb~ avtoz~</span></a>
-<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt;  3 astonmartin    bogdan         0.480 ulti~ UP23  Aston~ automot~ loanb~ bogdan</span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt;  4 astonmartin    chauto         0.591 ulti~ UP23  Aston~ automot~ loanb~ ch au~</span></a>
-<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt;  5 astonmartin    chehejia       0.311 ulti~ UP23  Aston~ automot~ loanb~ chehe~</span></a>
-<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="co">#&gt;  6 astonmartin    chtcauto       0.455 ulti~ UP23  Aston~ automot~ loanb~ chtc ~</span></a>
-<a class="sourceLine" id="cb8-15" data-line-number="15"><span class="co">#&gt;  7 astonmartin    dongfenghonda  0.501 ulti~ UP23  Aston~ automot~ loanb~ dongf~</span></a>
-<a class="sourceLine" id="cb8-16" data-line-number="16"><span class="co">#&gt;  8 astonmartin    dongfengluxgen 0.496 ulti~ UP23  Aston~ automot~ loanb~ dongf~</span></a>
-<a class="sourceLine" id="cb8-17" data-line-number="17"><span class="co">#&gt;  9 astonmartin    electricmobil~ 0.456 ulti~ UP23  Aston~ automot~ loanb~ elect~</span></a>
-<a class="sourceLine" id="cb8-18" data-line-number="18"><span class="co">#&gt; 10 astonmartin    faradayfuture  0.474 ulti~ UP23  Aston~ automot~ loanb~ farad~</span></a>
-<a class="sourceLine" id="cb8-19" data-line-number="19"><span class="co">#&gt; # ... with 89,083 more rows, and 1 more variable: sector_y &lt;chr&gt;</span></a></code></pre></div>
-<p>You may pick rows at and above some score with <code>dplyr::fileter()</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">threshold &lt;-<span class="st"> </span><span class="fl">0.5</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">matched_by_sector <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(score <span class="op">&gt;=</span><span class="st"> </span>threshold)</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; # A tibble: 35,683 x 3</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt;    simpler_name_x simpler_name_y  score</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;           &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt;  1 astonmartin    astonmartin     1    </span></a>
-<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt;  2 astonmartin    avtozaz         0.681</span></a>
-<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt;  3 astonmartin    chauto          0.591</span></a>
-<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt;  4 astonmartin    dongfenghonda   0.501</span></a>
-<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt;  5 astonmartin    huanghaimotors  0.641</span></a>
-<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt;  6 astonmartin    jianghuaivw     0.576</span></a>
-<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt;  7 astonmartin    jianglingjingma 0.543</span></a>
-<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="co">#&gt;  8 astonmartin    jiangsujoylong  0.504</span></a>
-<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="co">#&gt;  9 astonmartin    jilintongtian   0.606</span></a>
-<a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt; 10 astonmartin    master          0.677</span></a>
-<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt; # ... with 35,673 more rows</span></a></code></pre></div>
-<p>You may save the matched dataset with something like:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">readr<span class="op">::</span><span class="kw"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span>(matched, <span class="st">"path/to/save/matches_to_be_verified.csv"</span>)</a></code></pre></div>
-<p>You should verify and edit the data manually, e.g. with MS Excel or Google Sheets:</p>
-<p>Compare <code>simpler_name_x</code> and <code>simpler_name_y</code> manually, along with the loanbook sector. If you are happy with the match, set the <code>score</code> value to <code>1</code> (only values of exactly <code>1</code> will be considered valid).</p>
-<p>You may then re-read the validated data with:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">readr<span class="op">::</span><span class="kw"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span>(<span class="st">"path/to/load/verified_matches.csv"</span>)</a></code></pre></div>
-<p><strong>Work in progress, next step of analysis it to join in validated matches in order of priority</strong>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(r2dii.match)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(r2dii.dataraw)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; Loading required package: r2dii.utils</span></span></code></pre></div>
+<p>Matching is achieved in two main steps:</p>
+<div id="1-run-fuzzy-matching" class="section level3">
+<h3 class="hasAnchor">
+<a href="#1-run-fuzzy-matching" class="anchor"></a>1. Run fuzzy matching</h3>
+<p><code><a href="reference/match_name.html">match_name()</a></code> will extract all unique counterparty names from the columns: <code>direct_loantaker</code>, <code>ultimate_parent</code> or <code>intermediate_parent*</code> and run fuzzy matching against all company names in the <code>ald</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>match_result &lt;-<span class="st"> </span><span class="kw"><a href="reference/match_name.html">match_name</a></span>(loanbook_demo, ald_demo)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>match_result </span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co">#&gt; # A tibble: 502 x 27</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co">#&gt;    id_loan id_direct_loant… name_direct_loa… id_intermediate… name_intermedia…</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;           </span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt;  1 L170    C203             Tesla Inc        &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt;  2 L180    C217             Weichai Power C… &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt;  3 L181    C218             Wheego           &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt;  4 L195    C313             Zhengzhou Yuton… &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt;  5 L174    C211             Tvr              &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt;  6 L198    C317             Ziyang Nanjun    &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt;  7 L193    C310             Zamyad           &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt;  8 L165    C195             Sunwin Bus       &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt;  9 L154    C171             Shandong Tangju… &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; 10 L164    C193             Subaru Corp      &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="co">#&gt; # … with 492 more rows, and 22 more variables: id_ultimate_parent &lt;chr&gt;,</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt; #   name_ultimate_parent &lt;chr&gt;, loan_size_outstanding &lt;dbl&gt;,</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co">#&gt; #   loan_size_outstanding_currency &lt;chr&gt;, loan_size_credit_limit &lt;dbl&gt;,</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="co">#&gt; #   loan_size_credit_limit_currency &lt;chr&gt;, sector_classification_system &lt;chr&gt;,</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="co">#&gt; #   sector_classification_input_type &lt;chr&gt;,</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="co">#&gt; #   sector_classification_direct_loantaker &lt;dbl&gt;, fi_type &lt;chr&gt;,</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="co">#&gt; #   flag_project_finance_loan &lt;chr&gt;, name_project &lt;lgl&gt;,</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="co">#&gt; #   lei_direct_loantaker &lt;lgl&gt;, isin_direct_loantaker &lt;lgl&gt;, id_2dii &lt;chr&gt;,</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="co">#&gt; #   level &lt;chr&gt;, sector &lt;chr&gt;, sector_ald &lt;chr&gt;, name &lt;chr&gt;, name_ald &lt;chr&gt;,</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="co">#&gt; #   score &lt;dbl&gt;, source &lt;chr&gt;</span></span></code></pre></div>
+</div>
+<div id="2-prioritize-validated-matches" class="section level3">
+<h3 class="hasAnchor">
+<a href="#2-prioritize-validated-matches" class="anchor"></a>2. Prioritize validated matches</h3>
+<p>The user should then manually validate the output of <br><span class="math display"><em>m</em><em>a</em><em>t</em><em>c</em><em>h</em>_<em>n</em><em>a</em><em>m</em><em>e</em>()</span><br>, ensuring that the value of the column <code>score</code> is equal to <code>1</code> for perfect matches only.</p>
+<p>Once validated, the <code><a href="reference/prioritize.html">prioritize()</a></code> function, will choose only the valid matches, prioritizing (by default) <code>direct_loantaker</code> matches over <code>ultimate_parent</code> matches:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw"><a href="reference/prioritize.html">prioritize</a></span>(match_result)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt; # A tibble: 267 x 27</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt;    id_loan id_direct_loant… name_direct_loa… id_intermediate… name_intermedia…</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;           </span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt;  1 L151    C168             Shaanxi Auto     &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#&gt;  2 L152    C169             Shandong Auto    &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt;  3 L153    C170             Shandong Kama    &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co">#&gt;  4 L154    C171             Shandong Tangju… &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt;  5 L155    C173             Shanghai Automo… &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt;  6 L156    C176             Shanxi Dayun     &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt;  7 L157    C178             Shenyang Polars… &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt;  8 L158    C180             Shuanghuan Auto  &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt;  9 L159    C182             Sichuan Auto     &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt; 10 L160    C184             Singulato        &lt;NA&gt;             &lt;NA&gt;            </span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="co">#&gt; # … with 257 more rows, and 22 more variables: id_ultimate_parent &lt;chr&gt;,</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt; #   name_ultimate_parent &lt;chr&gt;, loan_size_outstanding &lt;dbl&gt;,</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="co">#&gt; #   loan_size_outstanding_currency &lt;chr&gt;, loan_size_credit_limit &lt;dbl&gt;,</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="co">#&gt; #   loan_size_credit_limit_currency &lt;chr&gt;, sector_classification_system &lt;chr&gt;,</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="co">#&gt; #   sector_classification_input_type &lt;chr&gt;,</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="co">#&gt; #   sector_classification_direct_loantaker &lt;dbl&gt;, fi_type &lt;chr&gt;,</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="co">#&gt; #   flag_project_finance_loan &lt;chr&gt;, name_project &lt;lgl&gt;,</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="co">#&gt; #   lei_direct_loantaker &lt;lgl&gt;, isin_direct_loantaker &lt;lgl&gt;, id_2dii &lt;chr&gt;,</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="co">#&gt; #   level &lt;chr&gt;, sector &lt;chr&gt;, sector_ald &lt;chr&gt;, name &lt;chr&gt;, name_ald &lt;chr&gt;,</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="co">#&gt; #   score &lt;dbl&gt;, source &lt;chr&gt;</span></span></code></pre></div>
+<p>The result is a dataset, with identical columns to the input loanbook, and added columns bridging all matched loans to their ald counterpart.</p>
+<p>For a more detailed walkthrough of the functionality <a href="https://2degreesinvesting.github.io/r2dii.match/articles/r2dii.match.html">Get started</a>).</p>
+</div>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
@@ -252,18 +185,18 @@
 <div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
-<li>file <a href="LICENSE-text.html">LICENSE</a>
-</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></small></li>
 </ul>
 </div>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://www.linkedin.com/in/mauro-lepore/">Mauro Lepore</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-1986-7988" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
+<a href="https://www.linkedin.com/in/mauro-lepore/">Mauro Lepore</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-1986-7988" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Klaus Hagedorn <br><small class="roles"> Author </small>  </li>
 <li>George Harris <br><small class="roles"> Author </small>  </li>
-<li>Jackson Hoffart <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-8600-5042" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
+<li>Jackson Hoffart <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-8600-5042" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Daan Koopman <br><small class="roles"> Author </small>  </li>
 <li>Florence Palandri <br><small class="roles"> Author </small>  </li>
 <li>Evgeny Petrovsky <br><small class="roles"> Author, contractor </small>  </li>
@@ -272,16 +205,7 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
-<li><a href="https://CRAN.R-project.org/package=r2dii.match"><embed src="https://www.r-pkg.org/badges/version/r2dii.match"></embed></a></li>
-<li><a href="https://travis-ci.org/2DegreesInvesting/r2dii.match"><img src="https://travis-ci.org/2DegreesInvesting/r2dii.match.svg?branch=master" alt="Travis build status"></a></li>
-<li><a href="https://coveralls.io/r/2DegreesInvesting/r2dii.match?branch=master"><img src="https://coveralls.io/repos/github/2DegreesInvesting/r2dii.match/badge.svg" alt="Coveralls test coverage"></a></li>
-</ul>
-</div>
-</div>
+  </div>
 </div>
 
 
@@ -290,7 +214,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>
