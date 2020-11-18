@@ -598,3 +598,19 @@ test_that("with arguments passed via ellipsis, throws no error (#310)", {
   # `q` should pass `...` with no error
   expect_no_error(match_name(fake_lbk(), fake_ald(), method = "qgram", q = 1))
 })
+
+test_that("with arguments passed via ellipsis, outputs the expected score", {
+  lbk <-
+    fake_lbk(name_direct_loantaker = "Yuamen Changyuan Hydropower Co., Ltd.")
+  ald <-
+    fake_ald(name_company = "yiyang baoyuan power generation co., ltd.")
+
+  expected <- stringdist::stringsim(
+    to_alias(lbk$name_direct_loantaker),
+    to_alias(ald$name_company),
+    method = "qgram", q = 1
+  )
+
+  out <- match_name(lbk, ald, method = "qgram", q = 1)$score
+  expect_equal(out, expected)
+})
